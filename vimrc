@@ -10,3 +10,8 @@ highlight CursorLine cterm=NONE guibg=lightblue ctermbg=lightgray
 set number
 iabbrev myAddr 10 Woodsage Ln Durham NC 27713
 iabbrev teh the
+
+"Tags file
+autocmd FileType tags set﻿ noexpandtab
+autocmd FileType tags set nonumber
+autocmd FileType tags set wrap
