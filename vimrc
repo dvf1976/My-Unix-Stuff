@@ -15,3 +15,18 @@ iabbrev teh the
 autocmd FileType tags set﻿ noexpandtab
 autocmd FileType tags set nonumber
 autocmd FileType tags set wrap
+
+au BufRead,BufNewFile *.t set syntax=perl
+
+:imap <Insert> <Esc>a
+filetype on
+
+" Arrow Keys aren't functional
+noremap  <Up> ""
+noremap! <Up> <Esc>
+noremap  <Down> ""
+noremap! <Down> <Esc>
+noremap  <Left> ""
+noremap! <Left> <Esc>
+noremap  <Right> ""
+noremap! <Right> <Esc>
