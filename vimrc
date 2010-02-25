@@ -22,11 +22,23 @@ au BufRead,BufNewFile *.t set syntax=perl
 filetype on
 
 " Arrow Keys aren't functional
-noremap  <Up> ""
-noremap! <Up> <Esc>
-noremap  <Down> ""
-noremap! <Down> <Esc>
-noremap  <Left> ""
-noremap! <Left> <Esc>
-noremap  <Right> ""
-noremap! <Right> <Esc>
+nnoremap  <Up> ""
+inoremap  <Up> ""
+vnoremap  <Up> ""
+snoremap  <Up> ""
+" nnoremap! <Up> <Esc>
+nnoremap  <Down> ""
+inoremap  <Down> ""
+vnoremap  <Down> ""
+snoremap  <Down> ""
+" nnoremap! <Down> <Esc>
+nnoremap  <Left> ""
+inoremap  <Left> ""
+vnoremap  <Left> ""
+snoremap  <Left> ""
+" nnoremap! <Left> <Esc>
+nnoremap  <Right> ""
+inoremap  <Right> ""
+vnoremap  <Right> ""
+snoremap  <Right> ""
+" nnoremap! <Right> <Esc>
