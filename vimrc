@@ -5,7 +5,9 @@ set tabstop=4
 set softtabstop=4
 set smarttab
 set expandtab
-set cursorline
+if version >= 700
+    set cursorline
+endif
 highlight CursorLine cterm=NONE guibg=lightblue ctermbg=lightgray
 set number
 iabbrev myAddr 10 Woodsage Ln Durham NC 27713
