@@ -27,20 +27,28 @@ filetype on
 nnoremap  <Up> ""
 inoremap  <Up> ""
 vnoremap  <Up> ""
-snoremap  <Up> ""
+if version >= 700
+    snoremap  <Up> ""
+endif
 " nnoremap! <Up> <Esc>
 nnoremap  <Down> ""
 inoremap  <Down> ""
 vnoremap  <Down> ""
-snoremap  <Down> ""
+if version >= 700
+    snoremap  <Down> ""
+endif
 " nnoremap! <Down> <Esc>
 nnoremap  <Left> ""
 inoremap  <Left> ""
 vnoremap  <Left> ""
-snoremap  <Left> ""
+if version >= 700
+    snoremap  <Left> ""
+endif
 " nnoremap! <Left> <Esc>
 nnoremap  <Right> ""
 inoremap  <Right> ""
 vnoremap  <Right> ""
-snoremap  <Right> ""
+if version >= 700
+    snoremap  <Right> ""
+endif
 " nnoremap! <Right> <Esc>
