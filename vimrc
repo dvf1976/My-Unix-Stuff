@@ -52,3 +52,19 @@ if version >= 700
     snoremap  <Right> ""
 endif
 " nnoremap! <Right> <Esc>
+
+function RunMe()
+  if filereadable('Makefile')
+    "excl.mark = suppress jumping on warr/err
+    make!
+    " open quickfix window IF there was any error
+    cwindow
+  else
+    " run current file as a script
+    !./%
+  endif
+endfunction
+
+"Make or run on F9
+map  <F9>  :w<CR>:call RunMe()<CR>
+imap <F9>  <esc>:w<CR>:call RunMe()<CR>
