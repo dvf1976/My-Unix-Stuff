@@ -10,6 +10,10 @@ Host tools tools.gss tools.gss.redhat.com
 Hostname tools.gss.redhat.com 
 User dfisher
 
+Host gss-reports1 gss-reports1.rdu gss-reports1.rdu.redhat.com 
+Hostname gss-reports1.rdu.redhat.com
+User root
+
 Host askingforthirds askingforthirds.org 
 Hostname askingforthirds.org
 User root
