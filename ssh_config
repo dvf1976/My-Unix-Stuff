@@ -1,0 +1,17 @@
+Host tambot tambot.gss tambot.gss.redhat.com 
+Hostname tambot.gss.redhat.com 
+User dfisher
+
+Host chatak chatak.rdu chatak.rdu.redhat.com 
+Hostname chatak.rdu.redhat.com 
+User dfisher
+
+Host tools tools.gss tools.gss.redhat.com 
+Hostname tools.gss.redhat.com 
+User dfisher
+
+Host askingforthirds askingforthirds.org 
+Hostname askingforthirds.org
+User root
+
+
