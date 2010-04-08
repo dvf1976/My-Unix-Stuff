@@ -1,3 +1,11 @@
+Host seg seg.rdu seg.rdu.redhat.com 
+Hostname seg.rdu.redhat.com 
+User dfisher
+
+Host metrics metrics.gss metrics.gss.redhat.com 
+Hostname metrics.gss.redhat.com
+User root
+
 Host tambot tambot.gss tambot.gss.redhat.com 
 Hostname tambot.gss.redhat.com 
 User dfisher
