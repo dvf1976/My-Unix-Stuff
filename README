@@ -1,0 +1,7 @@
+These files allow me (with a quick 'git pull') to transport my preferred environment whereever I go.
+
+It includes modifications to
+.ssh/config
+.vimrc
+.bashrc
+.screenrc
