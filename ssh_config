@@ -22,6 +22,10 @@ Host gss-reports1 gss-reports1.rdu gss-reports1.rdu.redhat.com
 Hostname gss-reports1.rdu.redhat.com
 User root
 
+Host gss-support gss-support.rdu gss-support.rdu.redhat.com 
+Hostname gss-support.rdu.redhat.com
+User root
+
 Host askingforthirds askingforthirds.org 
 Hostname askingforthirds.org
 User root
