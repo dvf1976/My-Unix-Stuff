@@ -28,3 +28,5 @@ os.symlink(source_sshconfig_location, destination_sshconfig_location)
 if not os.popen('/bin/grep My-Unix-Stuff ~/.bashrc').read():
    os.popen('/bin/cat ' + bash_profile_append + ' >> ~/.bashrc')
 
+os.chmod(destination_sshconfig_location, 600)
+
