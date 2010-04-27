@@ -31,6 +31,9 @@ os.symlink(source_sshconfig_location, destination_sshconfig_location)
 if not os.popen('/bin/grep My-Unix-Stuff ~/.bashrc').read():
    os.popen('/bin/cat ' + bash_profile_append + ' >> ~/.bashrc')
 
+if not os.path.exists(destination_bin_location):
+    os.mkdir("%s" % (destination_bin_location,))
+
 copy_bin_command_template = "/bin/cp %s* %s"
 copy_bin_command = copy_bin_command_template % (source_bin_location, destination_bin_location,)
 
