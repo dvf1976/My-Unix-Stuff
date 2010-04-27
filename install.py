@@ -38,7 +38,7 @@ copy_bin_command_template = "/bin/cp %s* %s"
 copy_bin_command = copy_bin_command_template % (source_bin_location, destination_bin_location,)
 
 os.popen(copy_bin_command).read()
-os.popen('/bin/chmod o+x %s/*' % (destination_bin_location,)).read()
+os.popen('/bin/chmod a+x %s/*' % (destination_bin_location,)).read()
 
 os.popen('/bin/chmod 600 %s' % (destination_sshconfig_location,)).read()
 
