@@ -8,8 +8,11 @@ dot_vimrc_location = "%s/.vimrc" % os.environ['HOME']
 screenrc_location = "%s/screenrc" % os.getcwd()
 dot_screenrc_location = "%s/.screenrc" % os.environ['HOME']
 
-source_sshconfig_location = "%s/ssh_config" % os.getcwd()
-destination_sshconfig_location = "%s/.ssh/config" % os.environ['HOME']
+source_sshconfig_location = "%s/ssh_config" % (os.getcwd(),)
+destination_sshconfig_location = "%s/.ssh/config" % (os.environ['HOME'],)
+
+source_bin_location = "%s/bin/" % (os.getcwd(),)
+destination_bin_location = "%s/bin/" % (os.environ['HOME'],)
 
 bash_profile_append = "%s/bash_profile_append.bash" % os.getcwd()
 
@@ -28,5 +31,11 @@ os.symlink(source_sshconfig_location, destination_sshconfig_location)
 if not os.popen('/bin/grep My-Unix-Stuff ~/.bashrc').read():
    os.popen('/bin/cat ' + bash_profile_append + ' >> ~/.bashrc')
 
-os.chmod(destination_sshconfig_location, 600)
+copy_bin_command_template = "/bin/cp %s* %s"
+copy_bin_command = copy_bin_command_template % (source_bin_location, destination_bin_location,)
+
+os.popen(copy_bin_command).read()
+os.popen('/bin/chmod o+x %s/*' % (destination_bin_location,)).read()
+
+os.popen('/bin/chmod 600 %s' % (destination_sshconfig_location,)).read()
 
