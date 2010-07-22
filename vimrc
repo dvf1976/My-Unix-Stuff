@@ -68,3 +68,15 @@ endfunction
 "Make or run on F9
 map  <F9>  :w<CR>:call RunMe()<CR>
 imap <F9>  <esc>:w<CR>:call RunMe()<CR>
+
+" window
+nmap <leader>swh  :topleft  vnew<CR>
+nmap <leader>swl :botright vnew<CR>
+nmap <leader>swk    :topleft  new<CR>
+nmap <leader>swj  :botright new<CR>
+
+" buffer
+nmap <leader>sh   :leftabove  vnew<CR>
+nmap <leader>sl  :rightbelow vnew<CR>
+nmap <leader>sk     :leftabove  new<CR>
+nmap <leader>sj   :rightbelow new<CR>
