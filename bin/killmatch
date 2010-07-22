@@ -7,12 +7,13 @@ import re
 
 process = sys.argv[1]
 
-process_list = commands.getoutput("ps aww | grep '%s'" % (process,))
+process_list = commands.getoutput("ps awwx | grep '%s'" % (process,))
 process_array = process_list.split("\n")
 pid_array = []
 for process in process_array:
     info = re.split('\s+', process.lstrip(),4)
     process_name = info[4]
+    print process_name
     if re.search('killmatch', process_name):
         continue
     if re.search('grep', process_name):
@@ -21,6 +22,6 @@ for process in process_array:
 
 for pid in pid_array:
     kill_statement = "kill -9 %s" % (pid,)
-    # print kill_statement
+    print kill_statement
     commands.getoutput(kill_statement)
 
