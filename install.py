@@ -5,6 +5,9 @@ import os
 vimrc_location = "%s/vimrc" % os.getcwd()
 dot_vimrc_location = "%s/.vimrc" % os.environ['HOME']
 
+vim_directory_location = "%s/vim" % os.getcwd()
+dot_vim_directory_location = "%s/.vim" % os.environ['HOME']
+
 screenrc_location = "%s/screenrc" % os.getcwd()
 dot_screenrc_location = "%s/.screenrc" % os.environ['HOME']
 
@@ -19,6 +22,10 @@ bash_profile_append = "%s/bash_profile_append.bash" % os.getcwd()
 if os.path.exists(dot_vimrc_location) or (os.path.lexists(dot_vimrc_location) and not os.path.exists(os.readlink(dot_vimrc_location))):
     os.unlink(dot_vimrc_location)
 os.symlink(vimrc_location, dot_vimrc_location)
+
+if os.path.exists(dot_vim_directory_location) or (os.path.lexists(dot_vim_directory_location) and not os.path.exists(os.readlink(dot_vim_directory_location))):
+    os.unlink(dot_vim_directory_location)
+os.symlink(vim_directory_location, dot_vim_directory_location)
 
 if os.path.exists(dot_screenrc_location) or (os.path.lexists(dot_screenrc_location) and not os.path.exists(os.readlink(dot_screenrc_location))):
     os.unlink(dot_screenrc_location)
