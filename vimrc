@@ -24,32 +24,32 @@ au BufRead,BufNewFile *.t set syntax=perl
 filetype on
 
 " Arrow Keys aren't functional
-nnoremap  <Up> ""
-inoremap  <Up> ""
-vnoremap  <Up> ""
+nnoremap  <Up> <nop>
+inoremap  <Up> <nop> 
+vnoremap  <Up> <nop>
 if version >= 700
-    snoremap  <Up> ""
+    snoremap  <Up> <nop> 
 endif
 " nnoremap! <Up> <Esc>
-nnoremap  <Down> ""
-inoremap  <Down> ""
-vnoremap  <Down> ""
+nnoremap  <Down> <nop> 
+inoremap  <Down> <nop>
+vnoremap  <Down> <nop>
 if version >= 700
-    snoremap  <Down> ""
+    snoremap  <Down> <nop>
 endif
 " nnoremap! <Down> <Esc>
-nnoremap  <Left> ""
-inoremap  <Left> ""
-vnoremap  <Left> ""
+nnoremap  <Left> <nop>
+inoremap  <Left> <nop>
+vnoremap  <Left> <nop>
 if version >= 700
-    snoremap  <Left> ""
+    snoremap  <Left> <nop>
 endif
 " nnoremap! <Left> <Esc>
-nnoremap  <Right> ""
-inoremap  <Right> ""
-vnoremap  <Right> ""
+nnoremap  <Right> <nop>
+inoremap  <Right> <nop>
+vnoremap  <Right> <nop>
 if version >= 700
-    snoremap  <Right> ""
+    snoremap  <Right> <nop>
 endif
 " nnoremap! <Right> <Esc>
 
@@ -76,7 +76,40 @@ nmap <leader>swk    :topleft  new<CR>
 nmap <leader>swj  :botright new<CR>
 
 " buffer
-nmap <leader>sh   :leftabove  vnew<CR>
-nmap <leader>sl  :rightbelow vnew<CR>
+nmap <leader>sh     :leftabove  vnew<CR>
+nmap <leader>sl     :rightbelow vnew<CR>
 nmap <leader>sk     :leftabove  new<CR>
-nmap <leader>sj   :rightbelow new<CR>
+nmap <leader>sj     :rightbelow new<CR>
+
+" http://nvie.com/posts/how-i-boosted-my-vim/
+
+" Use pathogen to easily modify the runtime path to include all
+" plugins under the ~/.vim/bundle directory
+call pathogen#helptags()
+call pathogen#runtime_append_all_bundles()
+
+" Quickly edit/reload the vimrc file
+nmap <silent> <leader>ev :e $MYVIMRC<CR>
+nmap <silent> <leader>sv :so $MYVIMRC<CR>
+
+let mapleader=","
+
+set backspace=indent,eol,start " allow backspacing over everything in insert mode
+set autoindent " always set autoindenting on
+set copyindent " copy the previous indentation on autoindenting
+set showmatch   " show matching parens
+set ignorecase  " ignore case when searching
+set smartcase   " ignore case if search pattern is all lowercase, 
+                "    case-sensitive otherwise
+set hlsearch    " highlight search terms
+set incsearch   " show search matches as you type
+
+set history=1000
+set undolevels=1000
+set wildignore=*.swp,*.bak,*.pyc,*.class
+set title                " change the terminal's title
+set visualbell           " don't beep
+set noerrorbells         " don't beep
+
+set pastetoggle=<F2>
+
