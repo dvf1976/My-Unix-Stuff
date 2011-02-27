@@ -4,6 +4,7 @@ import os
 import sys
 import re
 import socket
+import shutil
 
 hostname = socket.gethostname()
 work_or_personal = 'personal'
@@ -41,16 +42,28 @@ filetype_to_info_hash = {
         'dest'  : '%s/.conkyrc' % (os.environ['HOME'],),
     },
 }
+
+to_copy_hash = {
+    'bin'           : {
+        'src'   : "%s/bin" % (os.getcwd(),),
+        'dest'  : "%s/bin" % (os.environ['HOME'],),
+    },
+    'autostart'     : {
+        'src'   : "%s/autostart" % (os.getcwd(),),
+        'dest'  : "%s/.config/autostart" % (os.environ['HOME'],),
+    },
+}
+
 rpm_array = ['devilspie','conky','perl-Template-Toolkit',]
 
 for filetype in filetype_to_info_hash.keys():
     src = filetype_to_info_hash[filetype]['src']
     dest = filetype_to_info_hash[filetype]['dest']
     if filetype_to_info_hash[filetype].has_key('ttree'):
-        cfg = filetype_to_info_hash[filetype]['ttree']['cfg']
-        src = filetype_to_info_hash[filetype]['ttree']['src']
-        dest = filetype_to_info_hash[filetype]['ttree']['dest']
-        statement = '/usr/bin/ttree -f %s --src="%s" --dest="%s"' % (cfg,src,dest,)
+        if os.path.exists(src):
+            shutil.rmtree(src)
+        statement = '/usr/bin/ttree -f {cfg} --src="{src}" --dest="{dest}"'.format(**filetype_to_info_hash[filetype]['ttree'])
+        # print statement
         output = os.popen(statement).read()
         
     if os.path.exists(dest) or (os.path.lexists(dest) and not os.path.exists(os.readlink(dest))):
@@ -61,17 +74,20 @@ bash_profile_append = "%s/bash_profile_append.bash" % os.getcwd()
 if not os.popen('/bin/grep My-Unix-Stuff ~/.bashrc').read():
    os.popen('/bin/cat ' + bash_profile_append + ' >> ~/.bashrc')
 
-if not os.path.exists(destination_bin_location):
-    os.mkdir("%s" % (destination_bin_location,))
-
 source_bin_location = "%s/bin/" % (os.getcwd(),)
 destination_bin_location = "%s/bin/" % (os.environ['HOME'],)
 
-copy_bin_command_template = "/bin/cp %s* %s"
-copy_bin_command = copy_bin_command_template % (source_bin_location, destination_bin_location,)
+for to_copy in to_copy_hash.keys():
+    src = to_copy_hash[to_copy]['src']
+    dest = to_copy_hash[to_copy]['dest']
 
-os.popen(copy_bin_command).read()
-os.popen('/bin/chmod a+x %s/*' % (destination_bin_location,)).read()
+    if not os.path.exists(dest):
+        os.mkdir("%s" % (dest))
+
+    statement = '/bin/cp %s/* %s' % (src, dest,)
+    os.popen(statement).read()
+
+os.popen('/bin/chmod a+x %s/*' % (dest,)).read()
 
 os.popen('/bin/chmod 600 %s' % (filetype_to_info_hash['sshconfig']['dest'],)).read()
 

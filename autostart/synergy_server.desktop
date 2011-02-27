@@ -1,0 +1,10 @@
+# This file was automatically generated for the autostart                       
+# item synergy_server
+[Desktop Entry]
+Type=Application
+Exec=/home/dvf1976/bin/synergy_server
+Hidden=False
+Terminal=False
+StartupNotify=False
+Version=0.9.4
+Name=synergy_server
