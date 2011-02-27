@@ -16,17 +16,25 @@
 
 import urllib2
 import sys 
+import os
+import ConfigParser
 
 if sys.argv > 1: #arg must be supplied
     stocks = sys.argv #args are the stocks
     stocks.pop(0) #pop the first entry since its the filename
     print
-    print '%5s %8s %9s %9s %9s' % ('Name','Value','Open','Change','Time') #print header
+    print '%5s %8s %9s %9s %9s' % ('Name','Value','Total','Change','Time') #print header
     print '--------------------------------------------' #fancy line
 
     for i in stocks: #for each stock do this
-        stock=i
-    
+        stock = i
+        config = ConfigParser.ConfigParser()
+        config.read([os.path.expanduser('~/.My-Unix-Stuff.cfg')])
+        count = config.getint('stocks', i)
+
+        if not count:
+            count = 1
+            
         #This is the url from yahoo...if this changes the script dies, Ill fix it and upload again if it happens.
         csv = urllib2.urlopen('http://download.finance.yahoo.com/d/quotes.csv?s='+ stock +'&f=sl1d1t1c1ohgv&e=.csv')
         data = csv.read() #grab csv 
@@ -38,7 +46,8 @@ if sys.argv > 1: #arg must be supplied
         change=tokens[4]
         openVal=tokens[5]
 
-        print '%5s' % name,'%8s'% value,'%9s'% openVal,'%9s'% change,'%9s'% time #print to screen with formatting
+        total_val = "%.2f" % (int(count) * float(value),)
+        print '%5s' % name,'%8s'% value,'%9s'% total_val,'%9s'% change,'%9s'% time #print to screen with formatting
 else:
     print 'You forgot to supply your stock quote as an arg' #go back and give the script your stocks as arguments
     print 'Example: python stocks.py goog'
