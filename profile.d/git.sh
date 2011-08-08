@@ -4,7 +4,7 @@ git config --global user.email "dan@askingforthirds.org"
 hostname=`/bin/hostname`
 if [[ $hostname =~ 'redhat.com' ]]
 then
-    echo 'on redhat host'
+    # echo 'on redhat host'
     git config --global user.email "dfisher@redhat.com"
 fi
 
@@ -32,7 +32,20 @@ alias gd='git diff'
 alias go='git checkout '
 alias gk='gitk --all&'
 alias gx='gitx --all'
+# alias gm='gitvdiff'
 
 alias got='git '
 alias get='git '
 
+# From flossy
+# git config --global diff.external git-meld
+
+function set_screen_path() {
+  screen -X chdir "`pwd`"
+}
+
+case $TERM in
+screen*)
+  PROMPT_COMMAND=set_screen_path
+  ;;
+esac

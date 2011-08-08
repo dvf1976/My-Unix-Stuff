@@ -8,3 +8,11 @@ termcapinfo xterm ti@:te@
 # From http://www4.informatik.uni-erlangen.de/~jnweiger/screen-faq.html
 # # Q: My xterm scrollbar does not work with screen.
 # # A: The problem is that xterm will not allow scrolling if the alternate text buffer is selected. The standard definitions of the termcap initialize capabilities ti and te switch to and from the alternate text buffer. (The scrollbar also does not work when you start e.g. ‘vi’). You can tell screen not to use these initialisations by adding the line “termcapinfo xterm ti@:te@” to your ~/.screenrc file. 
+#
+#
+backtick 1 0 1 git-current-branch
+hardstatus alwayslastline "%-w%{.bw}%n %t%{-}%+w %-75= %1`"
+
+screen -t bash 0
+screen -t edit 1
+select 0
