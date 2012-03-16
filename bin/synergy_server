@@ -1,0 +1,2 @@
+#!/bin/bash
+sleep 30 && /usr/bin/synergys -c /home/dvf1976/synergy.conf

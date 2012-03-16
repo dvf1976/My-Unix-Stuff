@@ -1,0 +1,11 @@
+; generated_rule conky
+( if  
+( begin 
+( matches ( window_name ) "Conky" )
+) 
+( begin 
+( set_workspace [% number_of_workspaces %] ) 
+( println "match" )
+)
+)
+

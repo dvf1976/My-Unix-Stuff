@@ -113,3 +113,13 @@ set noerrorbells         " don't beep
 
 set pastetoggle=<F2>
 
+au BufEnter *.cls set syntax=java tabstop=4 shiftwidth=4 softtabstop=4 nowrap
+au BufEnter *.cls exec 'match Todo /\%>180v.\+/'
+"au BufEnter *.cls exec 'match Todo /\%>80v.\+/'
+au BufEnter *.trigger set syntax=java tabstop=4 shiftwidth=4 softtabstop=4 nowrap
+au BufEnter *.trigger exec 'match Todo /\%>180v.\+/'
+"au BufEnter *.trigger exec 'match Todo /\%>80v.\+/'
+
+" http://vim.wikia.com/wiki/Do_not_auto-add_a_newline_at_EOF
+au BufWritePre * :set binary | set noeol
+au BufWritePost * :set nobinary | set eol

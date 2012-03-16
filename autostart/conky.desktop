@@ -1,0 +1,11 @@
+# This file was automatically generated for the autostart
+# item conky
+[Desktop Entry]
+Type=Application
+Exec=/home/dvf1976/bin/conky
+Hidden=False
+Terminal=False
+StartupNotify=False
+Version=0.9.4
+Name=conky
+
