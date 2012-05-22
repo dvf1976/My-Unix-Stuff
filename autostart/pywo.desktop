@@ -1,0 +1,10 @@
+# This file was automatically generated for the autostart                       
+# item pywo
+[Desktop Entry]
+Type=Application
+Exec=python /home/dvf1976/bin/pywo/pywo.py
+Hidden=False
+Terminal=False
+StartupNotify=False
+Version=0.2
+Name=pywo
