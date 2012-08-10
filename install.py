@@ -84,7 +84,7 @@ for to_copy in to_copy_hash.keys():
     if not os.path.exists(dest):
         os.mkdir("%s" % (dest))
 
-    statement = '/bin/cp %s/* %s' % (src, dest,)
+    statement = '/bin/cp -ra %s/* %s' % (src, dest,)
     os.popen(statement).read()
 
 os.popen('/bin/chmod a+x %s/*' % (dest,)).read()

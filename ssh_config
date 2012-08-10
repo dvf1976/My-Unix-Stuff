@@ -30,4 +30,9 @@ Host askingforthirds askingforthirds.org
 Hostname askingforthirds.org
 User root
 
+Host lou
+Hostname 192.168.76.1
+User dvf1976
 
+Host *.rdu.redhat.com
+ProxyCommand /usr/bin/nc -X 5 -x localhost:9999 %h %p
