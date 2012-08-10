@@ -52,4 +52,3 @@ else:
     print 'You forgot to supply your stock quote as an arg' #go back and give the script your stocks as arguments
     print 'Example: python stocks.py goog'
     
-
