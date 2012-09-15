@@ -123,3 +123,6 @@ au BufEnter *.trigger exec 'match Todo /\%>180v.\+/'
 " http://vim.wikia.com/wiki/Do_not_auto-add_a_newline_at_EOF
 au BufWritePre * :set binary | set noeol
 au BufWritePost * :set nobinary | set eol
+
+noremap <F4> I//df<Esc><Esc>
+noremap <F5> :s/\/\/df//<Esc><Esc>
