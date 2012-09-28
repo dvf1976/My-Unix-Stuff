@@ -2,7 +2,7 @@ git config --global color.ui "auto"
 git config --global user.name "Daniel Fisher"
 git config --global user.email "dan@askingforthirds.org"
 hostname=`/bin/hostname`
-if [[ $hostname =~ 'redhat.com' ]]
+if [[ $hostname =~ 'redhat.com' || $hostname =~ 'martin' ]]
 then
     # echo 'on redhat host'
     git config --global user.email "dfisher@redhat.com"
@@ -42,6 +42,8 @@ alias gx='gitx --all'
 
 alias got='git '
 alias get='git '
+
+alias profiles="git diff --name-only *.profile | cut -d/ -f3 | sed -e 's/^/\"/;s/$/\"/' | xargs git add"
 
 # From flossy
 # git config --global diff.external git-meld

@@ -113,10 +113,12 @@ set noerrorbells         " don't beep
 
 set pastetoggle=<F2>
 
-au BufEnter *.cls set syntax=java tabstop=4 shiftwidth=4 softtabstop=4 nowrap
+"au BufEnter *.cls set syntax=java tabstop=4 shiftwidth=4 softtabstop=4 nowrap
+au BufEnter *.cls set syntax=java tabstop=4 shiftwidth=4 nowrap noexpandtab
 au BufEnter *.cls exec 'match Todo /\%>180v.\+/'
 "au BufEnter *.cls exec 'match Todo /\%>80v.\+/'
-au BufEnter *.trigger set syntax=java tabstop=4 shiftwidth=4 softtabstop=4 nowrap
+"au BufEnter *.trigger set syntax=java tabstop=4 shiftwidth=4 softtabstop=4 nowrap
+au BufEnter *.cls set syntax=java tabstop=4 shiftwidth=4 nowrap noexpandtab
 au BufEnter *.trigger exec 'match Todo /\%>180v.\+/'
 "au BufEnter *.trigger exec 'match Todo /\%>80v.\+/'
 
@@ -126,3 +128,5 @@ au BufWritePost * :set nobinary | set eol
 
 noremap <F4> I//df<Esc><Esc>
 noremap <F5> :s/\/\/df//<Esc><Esc>
+
+set tabpagemax=50
