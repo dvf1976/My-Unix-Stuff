@@ -53,7 +53,7 @@ if version >= 700
 endif
 " nnoremap! <Right> <Esc>
 
-function RunMe()
+function! RunMe()
   if filereadable('Makefile')
     "excl.mark = suppress jumping on warr/err
     make!
@@ -87,12 +87,14 @@ nmap <leader>sj     :rightbelow new<CR>
 " plugins under the ~/.vim/bundle directory
 call pathogen#helptags()
 call pathogen#runtime_append_all_bundles()
+noremap <F6> <esc>:call MoveTestToScratch()<CR>
+
+let mapleader=","
 
 " Quickly edit/reload the vimrc file
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
-let mapleader=","
 
 set backspace=indent,eol,start " allow backspacing over everything in insert mode
 set autoindent " always set autoindenting on
@@ -130,3 +132,4 @@ noremap <F4> I//df<Esc><Esc>
 noremap <F5> :s/\/\/df//<Esc><Esc>
 
 set tabpagemax=50
+"set swb=usetab
