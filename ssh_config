@@ -26,6 +26,10 @@ Host gss-support gss-support.rdu gss-support.rdu.redhat.com
 Hostname gss-support.rdu.redhat.com
 User root
 
+Host dataloader dataloader.gss dataloader.gss.redhat.com 
+Hostname dataloader.gss.redhat.com
+User root
+
 Host askingforthirds askingforthirds.org 
 Hostname askingforthirds.org
 User root
