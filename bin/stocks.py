@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -- coding: utf-8 --
+
 # Author: Bhavik Shah                                                                                                          
 # Date Created: Feb 27th, 2009
 # Description: Pulls stock quotes from yahoo finance
@@ -23,7 +26,7 @@ if sys.argv > 1: #arg must be supplied
     stocks = sys.argv #args are the stocks
     stocks.pop(0) #pop the first entry since its the filename
     print
-    print '%5s %8s %9s %9s %9s' % ('Name','Value','Total','Change','Time') #print header
+    print '%5s %8s %9s %9s %9s' % ('Name','Value','CapSig','Change','Time') #print header
     print '--------------------------------------------' #fancy line
 
     for i in stocks: #for each stock do this
@@ -46,8 +49,8 @@ if sys.argv > 1: #arg must be supplied
         change=tokens[4]
         openVal=tokens[5]
 
-        total_val = "%.2f" % (int(count) * float(value),)
-        print '%5s' % name,'%8s'% value,'%9s'% total_val,'%9s'% change,'%9s'% time #print to screen with formatting
+        total_val = "§%.2f" % (((int(count) * float(value)) * 0.01),)
+        print '%5s' % name,'%8s'% value,'%10s'% total_val,'%9s'% change,'%9s'% time #print to screen with formatting
 else:
     print 'You forgot to supply your stock quote as an arg' #go back and give the script your stocks as arguments
     print 'Example: python stocks.py goog'
