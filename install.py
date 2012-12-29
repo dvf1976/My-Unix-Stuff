@@ -41,6 +41,10 @@ filetype_to_info_hash = {
         'src'   : '%s/dot_conkyrc' % (os.getcwd(),),
         'dest'  : '%s/.conkyrc' % (os.environ['HOME'],),
     },
+    'todo'      : {
+        'src'   : '%s/conf/todo.cfg' % (os.getcwd(),),
+        'dest'  : '%s/.todo.cfg' % (os.environ['HOME'],),
+    },
 }
 
 to_copy_hash = {
