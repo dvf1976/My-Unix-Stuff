@@ -45,6 +45,10 @@ filetype_to_info_hash = {
         'src'   : '%s/conf/todo.cfg' % (os.getcwd(),),
         'dest'  : '%s/.todo.cfg' % (os.environ['HOME'],),
     },
+    'dot_todo' : {
+        'src'   : "%s/dot_todo" % os.getcwd(),
+        'dest'  : "%s/.todo" % os.environ['HOME'],
+    },
 }
 
 to_copy_hash = {
