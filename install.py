@@ -49,6 +49,10 @@ filetype_to_info_hash = {
         'src'   : "%s/dot_todo" % os.getcwd(),
         'dest'  : "%s/.todo" % os.environ['HOME'],
     },
+    'synergy'   : {
+        'src'   : "%s/conf/synergy_%s.conf" % (os.getcwd(), hostname,),
+        'dest'  : "%s/synergy_%s.conf" % (os.environ['HOME'], hostname,)
+    },
 }
 
 to_copy_hash = {

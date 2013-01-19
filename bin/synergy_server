@@ -1,2 +1,13 @@
 #!/bin/bash
-sleep 30 && /usr/bin/synergys -c /home/dvf1976/synergy.conf
+HOSTNAME=`hostname`
+killall -9 synergys 2&> /dev/null
+CONFIGURATION_FILE="$HOME/synergy.conf"
+HOST_SPECIFIC_CONFIGURATION_FILE="$HOME/synergy_$HOSTNAME.conf"
+echo $HOST_SPECIFIC_CONFIGURATION_FILE
+if [[ -e "$HOST_SPECIFIC_CONFIGURATION_FILE" ]]
+    then
+        CONFIGURATION_FILE=$HOST_SPECIFIC_CONFIGURATION_FILE
+fi
+SYNERGY_STATEMENT="/usr/bin/synergys -c $CONFIGURATION_FILE"
+echo $SYNERGY_STATEMENT
+$SYNERGY_STATEMENT
