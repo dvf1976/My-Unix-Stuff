@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if [[ $1 == 'add' ]]; then
+        shift
+        STATEMENT=/bin/bash ~/bin/todo.sh -t add "$@"
+        $STATEMENT
+    else
+        /bin/bash ~/bin/todo.sh $*
+fi
