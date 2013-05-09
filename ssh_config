@@ -8,7 +8,7 @@ User root
 
 Host tambot tambot.gss tambot.gss.redhat.com 
 Hostname tambot.gss.redhat.com 
-User dfisher
+User tambot
 
 Host chatak chatak.rdu chatak.rdu.redhat.com 
 Hostname chatak.rdu.redhat.com 
@@ -37,6 +37,11 @@ User root
 Host lou
 Hostname 192.168.76.1
 User dvf1976
+
+Host db db.dev db.dev.gss.redhat.com 
+Hostname db.dev.gss.redhat.com
+User dfisher
+
 
 #Host *.rdu.redhat.com
 #ProxyCommand /usr/bin/nc -X 5 -x localhost:9999 %h %p

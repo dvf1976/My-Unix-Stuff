@@ -19,6 +19,7 @@ autocmd FileType tags set nonumber
 autocmd FileType tags set wrap
 
 au BufRead,BufNewFile *.t set syntax=perl
+au BufRead,BufNewFile *.page set syntax=html
 
 :imap <Insert> <Esc>a
 filetype on
@@ -68,6 +69,8 @@ endfunction
 "Make or run on F9
 map  <F9>  :w<CR>:call RunMe()<CR>
 imap <F9>  <esc>:w<CR>:call RunMe()<CR>
+
+"set makeprg=[[\ -f\ Makefile\ ]]\ &&\ make\ \\\|\\\|\ make\ -C\ ..
 
 " window
 nmap <leader>swh  :topleft  vnew<CR>
