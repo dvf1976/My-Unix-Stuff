@@ -5,6 +5,8 @@ User dfisher
 Host metrics metrics.gss metrics.gss.redhat.com 
 Hostname metrics.gss.redhat.com
 User root
+ForwardAgent yes
+
 
 Host tambot tambot.gss tambot.gss.redhat.com 
 Hostname tambot.gss.redhat.com 
@@ -13,14 +15,19 @@ User tambot
 Host chatak chatak.rdu chatak.rdu.redhat.com 
 Hostname chatak.rdu.redhat.com 
 User dfisher
+ForwardAgent yes
+
 
 Host tools tools.gss tools.gss.redhat.com 
 Hostname tools.gss.redhat.com 
 User dfisher
+ForwardAgent yes
+
 
 Host gss-reports1 gss-reports1.rdu gss-reports1.rdu.redhat.com 
 Hostname gss-reports1.rdu.redhat.com
 User root
+
 
 Host gss-support gss-support.rdu gss-support.rdu.redhat.com 
 Hostname gss-support.rdu.redhat.com
@@ -29,6 +36,8 @@ User root
 Host dataloader dataloader.gss dataloader.gss.redhat.com 
 Hostname dataloader.gss.redhat.com
 User root
+ForwardAgent yes
+
 
 Host askingforthirds askingforthirds.org 
 Hostname askingforthirds.org
@@ -41,6 +50,8 @@ User dvf1976
 Host db db.dev db.dev.gss.redhat.com 
 Hostname db.dev.gss.redhat.com
 User dfisher
+ForwardAgent yes
+
 
 
 #Host *.rdu.redhat.com
