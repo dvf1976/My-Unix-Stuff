@@ -136,3 +136,4 @@ noremap <F5> :s/\/\/df//<Esc><Esc>
 
 set tabpagemax=50
 "set swb=usetab
+command TrailingWhitespace %s/\s\+$//
