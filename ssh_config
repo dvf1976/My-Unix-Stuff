@@ -18,12 +18,24 @@ User tambot
 ForwardAgent yes
 
 Host chatak chatak.rdu chatak.rdu.redhat.com 
-Hostname chatak.rdu.redhat.com 
+Hostname 10.10.183.24
 User dfisher
+ForwardAgent yes
+
+Host wendell
+Hostname 10.13.49.60
+User dvf1976
+ForwardAgent yes
+
+Host dororo
+Hostname 10.10.178.28
+User dfisher
+ForwardAgent yes
 
 Host tools tools.gss tools.gss.redhat.com 
 Hostname tools.gss.redhat.com 
 User dfisher
+ForwardAgent yes
 
 Host dataloader dataloader.gss dataloader.gss.redhat.com 
 Hostname dataloader.gss.redhat.com
@@ -42,10 +54,6 @@ Host db db.dev db.dev.gss.redhat.com
 Hostname db.dev.gss.redhat.com
 User dfisher
 ForwardAgent yes
-
-Host skinner 
-ForwardAgent yes
-
 
 #Host *.rdu.redhat.com
 #ProxyCommand /usr/bin/nc -X 5 -x localhost:9999 %h %p
