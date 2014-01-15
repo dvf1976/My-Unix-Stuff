@@ -136,4 +136,7 @@ noremap <F5> :s/\/\/df//<Esc><Esc>
 
 set tabpagemax=50
 "set swb=usetab
+noremap <F8> :tab drop /tmp/output.txt<CR> :q!<CR> :!bash ~/bin/scratch_test.bash<CR> :tab drop /tmp/output.txt<CR>
+"noremap <F8> :tab drop /tmp/output.txt<CR>:q!<CR>:!solenopsis git-push && solenopsis --logtype=Debugonly run-tests scratch_Test 2&> /tmp/output.txt<CR>:tab drop /tmp/output.txt<CR>
+"noremap <F8> :tab drop /tmp/output.txt<CR>:q!<CR>:tabnew /tmp/output.txt<CR>
 command TrailingWhitespace %s/\s\+$//
