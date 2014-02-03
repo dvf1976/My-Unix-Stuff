@@ -7,6 +7,11 @@ Hostname metrics.gss.redhat.com
 User root
 ForwardAgent yes
 
+Host jimbo
+Hostname jimbo
+User dvf1976
+ForwardAgent yes
+
 Host martin
 Hostname martin
 User dvf1976
