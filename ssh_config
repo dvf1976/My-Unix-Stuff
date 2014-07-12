@@ -60,5 +60,11 @@ Hostname db.dev.gss.redhat.com
 User dfisher
 ForwardAgent yes
 
+Host sshirke
+Hostname pvm-sshirke.gsslab.rdu2.redhat.com
+ForwardAgent yes
+User dfisher
+
+
 #Host *.rdu.redhat.com
 #ProxyCommand /usr/bin/nc -X 5 -x localhost:9999 %h %p
