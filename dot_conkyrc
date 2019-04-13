@@ -1,3 +1,4 @@
+-- https://bl.ocks.org/thoroc/0df8078260a3060318fb16716f0c53e8
 -- https://www.hiroom2.com/2017/01/19/fedora-25-install-conky/
 conky.config = {
 	update_interval = 1,
